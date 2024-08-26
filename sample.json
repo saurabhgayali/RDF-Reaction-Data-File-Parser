@@ -8,8 +8,12 @@
             "number_of_products": 1,
             "reaction_name": "Synthesis of 2-naphtols from alkynes",
             "references": "[10.1021/ol502951v]: https://doi.org/10.1021/ol502951v",
-            "reaction_conditions": "AlCl3.DCM.rt",
-            "smiles": "C#CCC1CCCCC1.O=C(Cl)Cc1ccccc1Br>>Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1",
+            "reaction_conditions": [
+                "AlCl3",
+                "DCM",
+                "rt"
+            ],
+            "reaction_smile": "C#CCC1CCCCC1.O=C(Cl)Cc1ccccc1Br>>Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1",
             "protections": "Not available",
             "inventory": "Not available"
         },
@@ -18,8 +22,10 @@
             "number_of_products": 1,
             "reaction_name": "Benzylic oxidation to ketone",
             "references": "[10.1021/acs.orglett.6b02914]: https://doi.org/10.1021/acs.orglett.6b02914 [10.1021/ol0520020]: https://doi.org/10.1021/ol0520020 [10.1055/s-0037-1610678]: https://doi.org/10.1055/s-0037-1610678 [10.1021/ol300853z]: https://doi.org/10.1021/ol300853z",
-            "reaction_conditions": "oxidant eg. Oxone or O2 or K2S2O8",
-            "smiles": "Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1>>O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1",
+            "reaction_conditions": [
+                "oxidant eg. Oxone or O2 or K2S2O8"
+            ],
+            "reaction_smile": "Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1>>O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1",
             "protections": "Not available",
             "inventory": "Not available"
         },
@@ -28,8 +34,18 @@
             "number_of_products": 1,
             "reaction_name": "Arylation of amides with aryl bromides",
             "references": "[10.1080/00397911.2016.1195844]: https://doi.org/10.1080/00397911.2016.1195844 [10.3390/molecules190913448]: https://doi.org/10.3390/molecules190913448 [10.1055/s-0035-1560473]: https://doi.org/10.1055/s-0035-1560473 [10.1021/ja0717414]: https://doi.org/10.1021/ja0717414",
-            "reaction_conditions": "Base.[Pd].catalyst.dioxane.heat or CuI.diamine.base.DMF.heat",
-            "smiles": "CC(N)=O.O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1>>CC(=O)Nc1cccc2c(C(=O)C3CCCCC3)cc(O)cc12",
+            "reaction_conditions": [
+                "Base",
+                "[Pd]",
+                "catalyst",
+                "dioxane",
+                "heat or CuI",
+                "diamine",
+                "base",
+                "DMF",
+                "heat"
+            ],
+            "reaction_smile": "CC(N)=O.O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1>>CC(=O)Nc1cccc2c(C(=O)C3CCCCC3)cc(O)cc12",
             "protections": "Functional group: [c][OH]",
             "inventory": "Not available"
         }

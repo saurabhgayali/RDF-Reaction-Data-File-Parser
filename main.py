@@ -6,7 +6,8 @@ import json
 input_filename = "sample.rdf"
 output_filename = "sample.json"
 max_reaction_per_file = 15
-datum_variables = {"Name": "reaction_name","Reference": "references","Reaction_Conditions": "reaction_conditions","SMILES": "smiles","Protections": "protections","Inventory": "inventory"}
+# key is name in rdf file while value will be key in json
+datum_variables = {"Name": "reaction_name","Reference": "references","Reaction_Conditions": "reaction_conditions","SMILES": "reaction_smile","Protections": "protections","Inventory": "inventory"}
 
 
 
@@ -29,6 +30,8 @@ def main():
 
         # Parsing additional reaction data
         reaction_datum_data = common.parse_datum_data(single_reaction, datum_variables)
+
+        reaction_datum_data["reaction_conditions"] = specifics.break_references(reaction_datum_data["reaction_conditions"])
 
         # Merging the dictionaries into a single dictionary
         combined_reaction_data = {**reaction_numbers, **reaction_datum_data}
