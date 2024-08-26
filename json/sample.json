@@ -1,0 +1,110 @@
+{
+  "rdfName": "sample.rdf",
+  "date": "7/10/2024",
+  "time": "11:01:46 AM",
+  "reactions": [
+    {
+      "id": "1",
+      "reactionSMILE": "C#CCC1CCCCC1.O=C(Cl)Cc1ccccc1Br>>Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1",
+      "reactionName": "Synthesis of 2-naphtols from alkynes",
+      "references": ["https://doi.org/10.1021/ol502951v"],
+      "reactionConditions": ["AlCl", "DCM", "rt"],
+      "protections": "Not available",
+      "Inventory": "Not available",
+      "reactants": [
+        {
+          "id": "1",
+          "structure": "$MOL\n\n..\n\n$MOL",
+          "SMILE": "C#CCC1CCCCC1"
+        },
+        {
+          "id": "2",
+          "structure": "$MOL\n\n..\n\n$MOL",
+          "SMILE": "O=C(Cl)Cc1ccccc1Br"
+        }
+      ],
+      "products": [
+        {
+          "id": "1",
+          "structure": "$MOL\n\n..\n\n$MOL",
+          "SMILE": "Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "reactionSMILE": "Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1>>O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1",
+      "reactionName": "Benzylic oxidation to ketone",
+      "references": ["https://doi.org/10.1021/ol502951v"],
+      "reactionConditions": ["oxidant eg. Oxone or O2 or K2S2O8"],
+      "protections": "Not available",
+      "Inventory": "Not available",
+      "reactants": [
+        {
+          "id": "1",
+          "structure": "$MOL\n\n..\n\n$MOL",
+          "SMILE": "Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1"
+        }
+      ],
+      "products": [
+        {
+          "id": "1",
+          "structure": "$MOL\n\n..\n\n$MOL",
+          "SMILE": "O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "reactionSMILE": "O.O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1>>CC(=O)Nc1cccc2c(C(=O)C3CCCCC3)cc(O)cc12",
+      "reactionName": "Synthesis of 2-naphtols from alkynes",
+      "references": [
+        "https://doi.org/10.1080/00397911.2016.1195844",
+        "https://doi.org/10.3390/molecules190913448",
+        "https://doi.org/10.1055/s-0035-1560473",
+        "https://doi.org/10.1021/ja0717414"
+      ],
+      "reactionConditions": [
+        "Base",
+        "[Pd]",
+        "catalyst",
+        "dioxane",
+        "heat or CuI",
+        "diamine",
+        "base",
+        "DMF",
+        "heat"
+      ],
+      "protections": "Functional group: [c][OH]",
+      "Inventory": "",
+      "Classification": "phenols",
+      "Protecting groups": [
+        "Methyl Ether",
+        "Methoxymethyl Ether",
+        "Benzyl Ether",
+        "Aryl Pivaloate",
+        "t-Butyldimethylsilyl Ether",
+        "2-Methoxyethoxymethyl Ether"
+      ],
+      "reactants": [
+        {
+          "id": "1",
+          "structure": "$MOL\n\n..\n\n$MOL",
+          "SMILE": "CC(N)=O"
+        },
+        {
+          "id": "2",
+          "structure": "$MOL\n\n..\n\n$MOL",
+          "SMILE": "O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1"
+        }
+      ],
+      "products": [
+        {
+          "id": "1",
+          "structure": "$MOL\n\n..\n\n$MOL",
+          "SMILE": "CC(=O)Nc1cccc2c(C(=O)C3CCCCC3)cc(O)cc12"
+        }
+      ]
+    }
+  ]
+}
