@@ -7,7 +7,12 @@
             "number_of_reactants": 2,
             "number_of_products": 1,
             "reaction_name": "Synthesis of 2-naphtols from alkynes",
-            "references": "[10.1021/ol502951v]: https://doi.org/10.1021/ol502951v",
+            "references": [
+                {
+                    "doi": "10.1021/ol502951v",
+                    "link": "https://doi.org/10.1021/ol502951v"
+                }
+            ],
             "reaction_conditions": [
                 "AlCl3",
                 "DCM",
@@ -15,25 +20,80 @@
             ],
             "reaction_smile": "C#CCC1CCCCC1.O=C(Cl)Cc1ccccc1Br>>Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1",
             "protections": "Not available",
-            "inventory": "Not available"
+            "inventory": "Not available",
+            "reactants": {
+                "smiles": [
+                    "C#CCC1CCCCC1",
+                    "O=C(Cl)Cc1ccccc1Br"
+                ]
+            },
+            "products": {
+                "smiles": [
+                    "Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1"
+                ]
+            }
         },
         {
             "number_of_reactants": 1,
             "number_of_products": 1,
             "reaction_name": "Benzylic oxidation to ketone",
-            "references": "[10.1021/acs.orglett.6b02914]: https://doi.org/10.1021/acs.orglett.6b02914 [10.1021/ol0520020]: https://doi.org/10.1021/ol0520020 [10.1055/s-0037-1610678]: https://doi.org/10.1055/s-0037-1610678 [10.1021/ol300853z]: https://doi.org/10.1021/ol300853z",
+            "references": [
+                {
+                    "doi": "10.1021/acs.orglett.6b02914",
+                    "link": "https://doi.org/10.1021/acs.orglett.6b02914"
+                },
+                {
+                    "doi": "10.1021/ol0520020",
+                    "link": "https://doi.org/10.1021/ol0520020"
+                },
+                {
+                    "doi": "10.1055/s-0037-1610678",
+                    "link": "https://doi.org/10.1055/s-0037-1610678"
+                },
+                {
+                    "doi": "10.1021/ol300853z",
+                    "link": "https://doi.org/10.1021/ol300853z"
+                }
+            ],
             "reaction_conditions": [
                 "oxidant eg. Oxone or O2 or K2S2O8"
             ],
             "reaction_smile": "Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1>>O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1",
             "protections": "Not available",
-            "inventory": "Not available"
+            "inventory": "Not available",
+            "reactants": {
+                "smiles": [
+                    "Oc1cc(CC2CCCCC2)c2cccc(Br)c2c1"
+                ]
+            },
+            "products": {
+                "smiles": [
+                    "O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1"
+                ]
+            }
         },
         {
             "number_of_reactants": 2,
             "number_of_products": 1,
             "reaction_name": "Arylation of amides with aryl bromides",
-            "references": "[10.1080/00397911.2016.1195844]: https://doi.org/10.1080/00397911.2016.1195844 [10.3390/molecules190913448]: https://doi.org/10.3390/molecules190913448 [10.1055/s-0035-1560473]: https://doi.org/10.1055/s-0035-1560473 [10.1021/ja0717414]: https://doi.org/10.1021/ja0717414",
+            "references": [
+                {
+                    "doi": "10.1080/00397911.2016.1195844",
+                    "link": "https://doi.org/10.1080/00397911.2016.1195844"
+                },
+                {
+                    "doi": "10.3390/molecules190913448",
+                    "link": "https://doi.org/10.3390/molecules190913448"
+                },
+                {
+                    "doi": "10.1055/s-0035-1560473",
+                    "link": "https://doi.org/10.1055/s-0035-1560473"
+                },
+                {
+                    "doi": "10.1021/ja0717414",
+                    "link": "https://doi.org/10.1021/ja0717414"
+                }
+            ],
             "reaction_conditions": [
                 "Base",
                 "[Pd]",
@@ -47,7 +107,18 @@
             ],
             "reaction_smile": "CC(N)=O.O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1>>CC(=O)Nc1cccc2c(C(=O)C3CCCCC3)cc(O)cc12",
             "protections": "Functional group: [c][OH]",
-            "inventory": "Not available"
+            "inventory": "Not available",
+            "reactants": {
+                "smiles": [
+                    "CC(N)=O",
+                    "O=C(c1cc(O)cc2c(Br)cccc12)C1CCCCC1"
+                ]
+            },
+            "products": {
+                "smiles": [
+                    "CC(=O)Nc1cccc2c(C(=O)C3CCCCC3)cc(O)cc12"
+                ]
+            }
         }
     ]
 }
