@@ -1,5 +1,8 @@
 import re
 import json
+import rdkit as Chem
+from rdkit.Chem import GraphDescriptors
+
 def break_reaction_conditions(text):
     # Adjusted regex to split by periods that are not followed by a word boundary after "eg."
     split_text = re.split(r'(?<!\beg)\.(?!\s)', text)
@@ -33,3 +36,10 @@ def parse_reaction_smiles(reaction_smile_string):
     # }
     
     return reactants,products
+def check():
+    bipycu = Chem.MolFromSmiles('c1cccn->2c1-c1n->3cccc1.[Cu]23(Cl)Cl')
+    bipycu.GetBondBetweenAtoms(4,12).GetBondType()
+    rdkit.Chem.rdchem.BondType.DATIVE
+    Chem.MolToSmiles(bipycu)
+    
+check()

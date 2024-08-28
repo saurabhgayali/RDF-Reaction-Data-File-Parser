@@ -23,6 +23,7 @@ def main(input_name,output_name):
         rdf_content, "$RXN", "header", 1, MAX_REACTION_PER_FILE)
 
     reaction_parameters = []
+    reaction_id=1
     for single_reaction in reaction_elements:
         reactant_product_info = single_reaction.split('\n')[3]
         no_of_reactants, no_of_products = common_tasks.capture_digits(
@@ -30,6 +31,7 @@ def main(input_name,output_name):
 
         # Creating a dictionary with reaction numbers
         reaction_numbers = {
+            'id': str(reaction_id),
             "number_of_reactants": no_of_reactants,
             "number_of_products": no_of_products
         }
@@ -52,13 +54,15 @@ def main(input_name,output_name):
         ) = specific_tasks.parse_reaction_smiles(
             reaction_datum_data["reaction_smile"]
         )
+        reaction_level2_data["reactants"]["s"]
         # Merging the dictionaries into a single dictionary
         combined_reaction_data = {**reaction_numbers,
                                   **reaction_datum_data, **reaction_level2_data}
 
         # Appending the combined dictionary to the reaction parameters list
         reaction_parameters.append(combined_reaction_data)
-
+        
+        reaction_id=reaction_id+1
     # Adding the reaction data to the main parsed content
     rdf_content_parsed["reactions"] = reaction_parameters
 

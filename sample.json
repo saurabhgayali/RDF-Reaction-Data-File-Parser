@@ -4,6 +4,7 @@
     "filename": "sample.rdf",
     "reactions": [
         {
+            "id": "1",
             "number_of_reactants": 2,
             "number_of_products": 1,
             "reaction_name": "Synthesis of 2-naphtols from alkynes",
@@ -34,6 +35,7 @@
             }
         },
         {
+            "id": "2",
             "number_of_reactants": 1,
             "number_of_products": 1,
             "reaction_name": "Benzylic oxidation to ketone",
@@ -73,6 +75,7 @@
             }
         },
         {
+            "id": "3",
             "number_of_reactants": 2,
             "number_of_products": 1,
             "reaction_name": "Arylation of amides with aryl bromides",
