@@ -36,10 +36,3 @@ def parse_reaction_smiles(reaction_smile_string):
     # }
     
     return reactants,products
-def check():
-    bipycu = Chem.MolFromSmiles('c1cccn->2c1-c1n->3cccc1.[Cu]23(Cl)Cl')
-    bipycu.GetBondBetweenAtoms(4,12).GetBondType()
-    rdkit.Chem.rdchem.BondType.DATIVE
-    Chem.MolToSmiles(bipycu)
-    
-check()
