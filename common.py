@@ -3,7 +3,7 @@ import time
 
 
 def extract_rdf_elements(content, file_path):
-
+    '''extract elements from rdf file'''
     if content == "File not found.":
         return "File not found."
 
@@ -16,11 +16,11 @@ def extract_rdf_elements(content, file_path):
     output["date"] = f"Date: {date_time}"
     output["time"] = f"Time: {date_time}"
     output["filename"] = file_path
-    #output["rection_data"]=extract_repeat_elements(content,"$RXN","start",0,15)
     return output
 
 
 def extract_reaction_elements(reaction_data):
+    '''extract reaction elements from rdf file'''
     content = reaction_data.split('\n')
     reactant_products_data = content[4]
     out = {}
@@ -30,10 +30,8 @@ def extract_reaction_elements(reaction_data):
 
 
 def capture_digits(text_with_strings):
-    # Strip any leading/trailing whitespace and split the data string by any whitespace
+    '''capture digits from string and separate in list '''
     digits = text_with_strings.strip().split()
-
-    # Convert the split string elements to integers
     first_number = int(digits[0])
     second_number = int(digits[1])
 
@@ -41,17 +39,18 @@ def capture_digits(text_with_strings):
 
 
 def extract_repeat_elements(text, break_string, type_of_break, start, number_of_elemnts):
+    '''extract repeat elements from rdf file depending on pattern and adding the split element back into string of each element'''
     data = text.split(break_string)[start:start+number_of_elemnts]
     data = [x.strip() for x in data]
     if type_of_break == "header":
         data = [break_string+"\n"+x for x in data]
     if type_of_break == "footer":
         data = [x+"\n"+break_string for x in data]
-    print(type(data))
     return data
 
-def parse_datum_data(input_data, variable_names):
 
+def parse_datum_data(input_data, variable_names):
+    '''parse datum data from rdf file'''
     result = {}
     current_dtype = None
 
@@ -63,19 +62,11 @@ def parse_datum_data(input_data, variable_names):
             datum_value = line.split(" ", 1)[1]
             if current_dtype in variable_names:
                 result[variable_names[current_dtype]] = datum_value
-        # Unrecognized lines are simply ignored
-
     return result
-
-
-
-
-
 
 
 if __name__ == '__main__':
     FILE_PATH = "sample.rdf"
     sample_data = read_file(FILE_PATH)
-    out=extract_rdf_elements(sample_data,FILE_PATH)
+    out = extract_rdf_elements(sample_data, FILE_PATH)
     print(out)
-    

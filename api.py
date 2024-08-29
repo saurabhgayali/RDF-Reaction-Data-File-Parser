@@ -1,11 +1,12 @@
-from flask import Flask, jsonify, request, abort
 import os
 import json
+from flask import Flask, jsonify, abort
+
 
 app = Flask(__name__)
 
-# Directory where JSON files are stored
 JSON_DIRECTORY = 'json'
+
 
 def load_json_data(json_filename):
     """
@@ -19,6 +20,7 @@ def load_json_data(json_filename):
             return json.load(file)
     except Exception as e:
         return None
+
 
 def get_nested_data(data, keys):
     """
@@ -36,6 +38,7 @@ def get_nested_data(data, keys):
             abort(404, description="Key not found")
     return data
 
+
 @app.route('/<json_filename>/', defaults={'path': ''}, methods=['GET'])
 @app.route('/<json_filename>/<path:path>', methods=['GET'])
 def load_json_route(json_filename, path):
@@ -45,12 +48,13 @@ def load_json_route(json_filename, path):
     data = load_json_data(json_filename)
     if data is None:
         abort(404, description="JSON file not found")
-    
+
     if path:
         keys = path.split('/')
         data = get_nested_data(data, keys)
-    
+
     return jsonify(data)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

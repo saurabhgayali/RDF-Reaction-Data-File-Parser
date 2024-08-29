@@ -4,11 +4,8 @@ import common as common_tasks
 import specifics as specific_tasks
 import rdkit_helpers as rdkit_tasks
 
-# input_filename, output_filename = helpers.load_arguments()
-# INPUT_FILENAME = "sample.rdf"
-# OUTPUT_FILENAME = "sample.json"
 MAX_REACTION_PER_FILE = 15
-# key is name in rdf file while value will be key in json
+'''variables for parsing datum data. key is name in rdf file while value will be key in json'''
 datum_variables = {"Name": "reaction_name", "Reference": "references",
                    "Reaction_Conditions": "reaction_conditions",
                    "SMILES": "reaction_smile", "Protections": "protections",
@@ -30,22 +27,20 @@ def main(input_name, output_name):
         no_of_reactants, no_of_products = common_tasks.capture_digits(
             reactant_product_info)
 
-        # Creating a dictionary with reaction numbers
         reaction_numbers = {
             'id': str(reaction_id),
             "number_of_reactants": no_of_reactants,
             "number_of_products": no_of_products
         }
 
-        # Parsing additional reaction data
         reaction_datum_data = common_tasks.parse_datum_data(
             single_reaction, datum_variables)
-        # Breaking the references
+
         reaction_datum_data["reaction_conditions"] = specific_tasks.break_reaction_conditions(
             reaction_datum_data["reaction_conditions"])
         reaction_datum_data["references"] = specific_tasks.parse_doi_links(
             reaction_datum_data["references"])
-        # Parsing reactants and products from reaction smile
+
         reaction_level2_data = {}
         reaction_level2_data["reactants"] = {}
         reaction_level2_data["products"] = {}
@@ -57,40 +52,35 @@ def main(input_name, output_name):
         )
         reaction_level2_data["reactants"]["structure"] = []
 
-
         reaction_level2_data["products"]["structure"] = []
 
         for smile in reaction_level2_data["reactants"]["smiles"]:
-            mol = rdkit_tasks.smiles_to_mol(smile)  # Convert SMILES string to RDKit molecule
-            if mol:  # Check if the molecule was successfully created
+            mol = rdkit_tasks.smiles_to_mol(smile)
+            if mol:
                 reaction_level2_data["reactants"]["structure"].append(
                     mol)
             else:
-                # Handle the case where SMILES conversion fails (optional)
+
                 print(f"Failed to convert SMILES: {smile}")
-        
+
         for smile in reaction_level2_data["products"]["smiles"]:
-            mol = rdkit_tasks.smiles_to_mol(smile)  # Convert SMILES string to RDKit molecule
-            if mol:  # Check if the molecule was successfully created
+            mol = rdkit_tasks.smiles_to_mol(smile)
+            if mol:
                 reaction_level2_data["products"]["structure"].append(
                     mol)
             else:
-                # Handle the case where SMILES conversion fails (optional)
+
                 print(f"Failed to convert SMILES: {smile}")
 
-
-        # Merging the dictionaries into a single dictionary
         combined_reaction_data = {**reaction_numbers,
                                   **reaction_datum_data, **reaction_level2_data}
 
-        # Appending the combined dictionary to the reaction parameters list
         reaction_parameters.append(combined_reaction_data)
 
         reaction_id = reaction_id+1
-    # Adding the reaction data to the main parsed content
+
     rdf_content_parsed["reactions"] = reaction_parameters
 
-    # Writing the parsed content to the output file
     print(helper_tasks.write_to_file(json.dumps(
         rdf_content_parsed, indent=4), output_name))
 
